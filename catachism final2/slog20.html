@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .question {
+            font-size: 40px;
+            margin-bottom: 70px;
+            color: rgb(64, 20, 133);
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-button {
+            font-size: 30px;
+            color: rgb(56, 36, 15);
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3 ease-in-out;
+        }
+        .message {
+            font-size: 100px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question"><br>
+           "Think Different !"
+        </div>
+        <div class="options">
+            <button class="option-button" onclick="checkAnswer(this)">Oppo</button>
+            <button class="option-button" onclick="checkAnswer(this)">Apple</button>
+            <button class="option-button" onclick="checkAnswer(this)">Palm</button>
+            <button class="option-button" onclick="checkAnswer(this)">Xiaomi</button>
+        </div>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        function checkAnswer(button) {
+            const correctAnswer = "Apple";
+            const selectedAnswer = button.textContent;
+
+            if (selectedAnswer === correctAnswer) {
+                button.style.backgroundColor = "green";
+                document.getElementById("message").textContent = "Correct!";
+                document.getElementById("message").style.color = "green";
+            } else {
+                button.style.backgroundColor = "red";
+                document.getElementById("message").textContent = "Incorrect";
+                document.getElementById("message").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz with logo find</title>
+    <style>
+        button{
+            margin-right: 10px;
+            width: 290px;
+            height: 150px;
+            padding: 0px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            /* font-size: 16px; */
+            font-weight: bold;
+        }
+        .correct {
+            Background-color: rgb(101, 240, 101);
+        }
+
+        .incorrect {
+            Background-color: rgb(246, 69, 69);
+        }
+    </style>
+</head>
+<body><center>
+    <h2>Find It !</h2>
+    <h3>What is the logo ?</h3>
+    <img src=".\logos\img23.jpeg" alt="" height="300" width="300">
+    <br><br><br>
+    <button id="choice1" onclick="checkAnswer('choice1')">A.Man Truck & Bus</button>
+    <button id="choice2" onclick="checkAnswer('choice2')">B.Bentley</button>
+    <button id="choice3" onclick="checkAnswer('choice3')">C.Volkswagan</button>
+    <button id="choice4" onclick="checkAnswer('choice4')">D.Traton</button>
+    
+    <p id="result"></p>
+    <script>
+        function checkAnswer(choice) {
+            var correctChoice = "choice3"; // Set the correct choice ID here
+            var allChoices = ["choice1", "choice2", "choice3", "choice4"];
+            
+            for (var i = 0; i < allChoices.length; i++) {
+                var button = document.getElementById(allChoices[i]);
+                if (allChoices[i] === correctChoice) {
+                    button.classList.remove("incorrect");
+                    button.classList.add("correct");
+                } else {
+                    button.classList.remove("correct");
+                    button.classList.add("incorrect");
+                }
+            }
+
+            if (choice === correctChoice) {
+                document.getElementById("result").innerHTML = "<h2><b>Correct! Volkswagan is the answer.</h2></b>";
+            
+            } else {
+                document.getElementById("result").innerHTML = "<h2><b>Sorry, that's not correct. </h2></b>";
+             
+            }
+        }
+    </script>
+</center>
+</body>
+</html>
